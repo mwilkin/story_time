@@ -4,7 +4,7 @@
 <p>
   <% @story.contributions.each do |contribution| %>
 
-  <%= contribution.content %>
+  <%= link_to contribution.content, story_contribution_path(@story, contribution) %>
 
   <%end%>
 </p>

@@ -1,0 +1,6 @@
+<h1><%= @contribution.content %></h1>
+
+<p><%= link_to 'Edit', edit_story_contribution_path(@contribution.story, @contribution) %></p>
+<p><%= link_to 'Delete', story_contribution_path(@contribution.story, @contribution),
+                            data: {confirm: "You sure?",
+                            method: "delete"}%></p>
