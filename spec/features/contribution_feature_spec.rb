@@ -22,4 +22,12 @@ describe 'the contribution feature' do
     expect(page).to have_content('on the seat of car.')
   end
 
+  it 'should allow user to delete a contribution' do
+    story = Story.create(title: 'Then I Found Five Dollars')
+    contribution = story.contributions.create(content: 'on the seat of my bicycle', image: 'image1.jpeg', creator: 'Matt')
+    visit story_contribution_path(story, contribution)
+    click_on 'Delete'
+    expect(page).to_not have_content('on the seat of bicycle.')
+  end
+
 end

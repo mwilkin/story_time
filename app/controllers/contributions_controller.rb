@@ -15,6 +15,12 @@ class ContributionsController < ApplicationController
     @contribution = Contribution.find(params[:id])
   end
 
+  def destroy
+    @contribution = Contribution.find(params[:id])
+    @contribution.destroy
+    redirect_to story_path(@contribution.story)
+  end
+
   def update
     @story = Story.find(params[:story_id])
     @contribution = Contribution.find(params[:id])
