@@ -1,3 +1,14 @@
 <h1>This is the new contribution page</h1>
 
+<%= image_tag(@image) %>
+
+<p>
+  <% @story.contributions.each do |contribution| %>
+
+  <%= link_to contribution.content, story_contribution_path(@story, contribution) %>
+
+  <%end%>
+</p>
+
+
 <%= render 'form' %>

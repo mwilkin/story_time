@@ -1,5 +1,8 @@
-<h1><%= @contribution.content %></h1>
+<h1><%= @contribution.creator %> wrote, "<%= @contribution.content %>"</h1>
+<%= image_tag(@contribution.image) %>
 
+
+<p><%= link_to 'Return to Story', story_path(@contribution.story) %></p>
 <p><%= link_to 'Edit', edit_story_contribution_path(@contribution.story, @contribution) %></p>
 <p><%= link_to 'Delete', story_contribution_path(@contribution.story, @contribution),
                             data: {confirm: "You sure?",
