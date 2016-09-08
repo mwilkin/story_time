@@ -17,4 +17,13 @@ describe 'the story feature' do
     expect(page).to have_content 'Please correct the errors'
   end
 
+  it 'should all user to update a story title' do
+    story = Story.create(title: 'Then I Found Five Dollars')
+    visit story_path(story)
+    click_on 'Edit'
+    fill_in 'Title', with: "Then I Found Ten Dollars"
+    click_on 'Update Story'
+    expect(page).to have_content 'Then I Found Ten Dollars'
+  end
+
 end
