@@ -1,4 +1,5 @@
 <% if object.errors.any? %>
+<h4>Please correct the errors.</h4>
   <% object.errors.full_messages.each do |message| %>
     <h4><%=message%></h4>
   <%end%>

@@ -11,4 +11,10 @@ describe 'the story feature' do
     expect(page).to have_content('August\'s Biking Adventures')
   end
 
+  it 'gives error when no title is entered' do
+    visit new_story_path
+    click_on 'Create Story'
+    expect(page).to have_content 'Please correct the errors'
+  end
+
 end
