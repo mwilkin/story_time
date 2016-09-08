@@ -1,13 +1,11 @@
 <h1>This is story Index</h1>
 
 <%= form_tag(stories_path, method: :get) do %>
-
   <%= select_tag "order", options_for_select([["Most Recent", "created_at"], ["Alphabetically", "title"]]) %>
   <%= submit_tag %>
-
 <%end%>
 
-<%= @filter %>
+
 
 <% @stories.each do |story| %>
   <h1><%= link_to story.title, story_path(story)%></h1>
