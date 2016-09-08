@@ -2,6 +2,12 @@ class StoriesController < ApplicationController
 
   def index
     @stories = Story.all
+    if params[:order] == 'created_at'
+      @stories = Story.order(params[:order].to_sym => :desc)
+    elsif params[:order] == 'title'
+        @stories = Story.order(params[:order].to_sym => :asc)
+    end
+
   end
 
   def new
